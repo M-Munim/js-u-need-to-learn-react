@@ -64,4 +64,47 @@ const num = rollNums.filter(function (item) {
         return item;
     }
 })
-console.log(num)
+// console.log(num)
+
+// OBJECTS:
+const cars = {
+    name: "toyota",
+    category: "sedan",
+    model: 2023,
+    varient: "top of the line",
+    engine: 1800
+}
+// destructuring 
+const { name, category, model, varient, engine } = cars
+// console.log(name);
+// console.log(cars.name)
+
+// REST AND SPREAD:
+
+let teacher = {
+    name: "kamran",
+    age: 45,
+    subject: "web dev",
+    department: "isc/it"
+}
+
+// let teacher1 = teacher;
+// spread op
+let teacher1 = { ...teacher, car: "corolla" }
+teacher1.name = "munim"
+
+// console.log(teacher)
+// console.log(teacher1)
+
+const languages = {
+    java: "mobile app",
+    python: "ai",
+    swift: "ios app",
+    js: "web",
+    node: "Web backend",
+    react: "web ui",
+}
+
+const { java, python, swift, ...web } = languages;
+
+console.log(java, python, swift, web);
