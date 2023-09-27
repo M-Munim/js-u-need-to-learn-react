@@ -1,4 +1,4 @@
-//   VARIABLES:
+//  1   VARIABLES:
 
 // can be redeclared
 var a = "munim";
@@ -17,7 +17,7 @@ const c = "munim"
 // let b = "kamran"
 // console.log(c);
 
-// TERNARY :
+//  2   TERNARY :
 
 let age = 9;
 // if (age > 10) {
@@ -28,7 +28,7 @@ let age = 9;
 
 // age > 10 ? console.log("Come in") : console.log("Dont Come");
 
-// FUNCTIONS:
+//  3   FUNCTIONS:
 
 function sum() {
     return 10 + 20;
@@ -41,7 +41,7 @@ let sub = () => {
 }
 // console.log(sub());
 
-// ARRAYS:
+//  4   ARRAYS:
 
 let students = ["munim", "kamran", "isha", "ayesha"]
 
@@ -66,7 +66,7 @@ const num = rollNums.filter(function (item) {
 })
 // console.log(num)
 
-// OBJECTS:
+//  5   OBJECTS:
 const cars = {
     name: "toyota",
     category: "sedan",
@@ -79,7 +79,7 @@ const { name, category, model, varient, engine } = cars
 // console.log(name);
 // console.log(cars.name)
 
-// REST AND SPREAD:
+//  6   REST AND SPREAD:
 
 let teacher = {
     name: "kamran",
@@ -107,4 +107,73 @@ const languages = {
 
 const { java, python, swift, ...web } = languages;
 
-console.log(java, python, swift, web);
+// console.log(java, python, swift, web);
+
+//  7   CALLBACK:
+
+function add(a, b, intro) {
+    // console.log(a + b);
+    intro();
+}
+
+(add(10, 20, function () {
+    // console.log("I am Munim")
+}))
+
+//  8   PROMISES:
+
+// console.log("A");
+setTimeout(() => {
+    // console.log("B");
+}, 1000);
+// console.log("C");
+
+// 
+
+let prom = new Promise(function (resolve, reject) {
+    const age = 20;
+    if (age > 10) {
+        resolve("Qualified")
+    } else {
+        reject("Rejected")
+    }
+})
+
+prom.then(function (data) {
+    // console.log(data);
+}).catch(function (err) {
+    // console.log(err);
+})
+
+// ASYNC AND AWAIT:
+
+// console.log("i reached");
+// let prom2 = new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//         console.log("hi i am in ")
+//         resolve();
+//     }, 1000);
+// })
+
+// async function exec() {
+//     await prom2
+//     console.log("i am out ")
+// }
+// exec();
+
+let prom2 = new Promise(function (resolve, reject) {
+    reject("Rejected")
+})
+
+async function exec() {
+    try {
+        await prom2
+        console.log("resolve")
+
+    } catch (error) {
+        console.log("rejected")
+    }
+}
+exec();
+
+
