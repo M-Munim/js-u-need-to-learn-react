@@ -145,7 +145,7 @@ prom.then(function (data) {
     // console.log(err);
 })
 
-// ASYNC AND AWAIT:
+//  9   ASYNC AND AWAIT:
 
 // console.log("i reached");
 // let prom2 = new Promise(function (resolve, reject) {
@@ -168,12 +168,25 @@ let prom2 = new Promise(function (resolve, reject) {
 async function exec() {
     try {
         await prom2
-        console.log("resolve")
+        // console.log("resolve")
 
     } catch (error) {
-        console.log("rejected")
+        // console.log("rejected")
     }
 }
 exec();
 
+//  10  CLOSURE:
 
+// Aik function k andr 2nd func ko return karna and returned func apny parent fun k scope ko access kar para ho.
+
+function additon(num1, num2) {
+    let name = "Munim";
+    let a = num1 + num2;
+    return function () {
+        console.log(name, "Hi i am in", a);
+    }
+}
+const output = additon(2, 3);
+
+// output();
